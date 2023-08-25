@@ -16,7 +16,7 @@ class RequestRepository extends AbstractRepository
     protected array $collection = [];
     protected $entity = Request::class;
 
-    public function create(int $items, float $value, State $state): Request
+    public function create(array $items, State $state): Request
     {
         $freight = new Freight();
         $freight->value = $this->getFreightValue($state);
@@ -25,7 +25,6 @@ class RequestRepository extends AbstractRepository
         $request = new Request();
         $request->id = uniqid();
         $request->items = $items;
-        $request->value = $value;
         $request->state = $state;
         $request->freight = $freight;
 

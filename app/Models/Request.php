@@ -7,8 +7,7 @@ use App\Models\RequestStatus\RequestStatusPending;
 
 class Request {
     public string $id;
-    public int $items;
-    public float $value;    
+    public array $items;
     public $state;  
     public Freight $freight;    
     public RequestStatus $status;
@@ -16,5 +15,11 @@ class Request {
     public function __construct()
     {
         $this->status = new RequestStatusPending();
+    }
+
+    public function getTotal() : float {
+        return array_reduce($this->items, function (float $value, Item $item) {
+            return $item->getValue() + $value;
+        }, 0);
     }
 }

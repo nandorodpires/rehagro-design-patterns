@@ -21,12 +21,12 @@ class RequestController
         $this->requesHandler = new RequestHandler;
     }
 
-    public function create(int $items, float $value, string $state_code)
+    public function create(array $items, string $state_code)
     {
         $stateRepository = new StateRepository();
         $state = $stateRepository->getStateByCode($state_code); 
         try {
-            $request = $this->requestRepository->create($items, $value, $state);
+            $request = $this->requestRepository->create($items, $state);
             return $request;
         } catch (\Throwable $th) {
             throw new DomainException($th->getMessage());

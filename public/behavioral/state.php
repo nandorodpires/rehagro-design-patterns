@@ -3,14 +3,14 @@
 use App\Models\State;
 use App\Repositories\RequestRepository;
 
-require '../vendor/autoload.php';
+require '../../vendor/autoload.php';
 
 $state = new State();
 $state->code = 'MG';
 
 try {
     $requestRepository = new RequestRepository();
-    $request = $requestRepository->create(10, 50.99, $state);
+    $request = $requestRepository->create([], $state);
 
     echo "Estado atual: " . $request->status->name . "\n";
 

@@ -2,17 +2,17 @@
 
 use App\Controllers\RequestController;
 
-require '../vendor/autoload.php';
+require '../../vendor/autoload.php';
 
 try {
     $requestController = new RequestController();
-    $request1 = $requestController->create(2, 109.9, 'MG');
+    $request1 = $requestController->create([], 'MG');
     $requestController->approve($request1);
 
-    $request2 = $requestController->create(3, 59.99, 'SP');
+    $request2 = $requestController->create([], 'SP');
     $requestController->cancel($request2);
 
-    $request3 = $requestController->create(4, 273.01, 'BA');
+    $request3 = $requestController->create([], 273.01, 'BA');
 
     $requests = $requestController->get();
     
