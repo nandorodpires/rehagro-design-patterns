@@ -5,8 +5,6 @@ require '../../vendor/autoload.php';
 use App\Controllers\RequestController;
 use App\Repositories\ItemRepository;
 
-require '../../vendor/autoload.php';
-
 try {
     $itemRepository = new ItemRepository();
     $item1 = $itemRepository->create('Notebook', 1500.99);
