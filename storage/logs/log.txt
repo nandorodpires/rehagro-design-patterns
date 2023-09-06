@@ -1,0 +1,4 @@
+[2023-09-06 11:21:12][fatal]: Houve algum erro no sistema
+[2023-09-06 11:25:09][FATAL ERROR]: Houve algum erro no sistema
+[2023-09-06 11:25:09][WARNING]: Algum alerta do sistema
+[2023-09-06 11:25:09][NOTICE]: Alguma notificação do sistema
